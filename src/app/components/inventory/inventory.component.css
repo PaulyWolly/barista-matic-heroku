@@ -1,0 +1,25 @@
+table {
+  border: 1px solid #808080;
+  width: 500px;
+}
+
+table thead .uc-title, .ingredient-title, .is-title {
+  background-color: rgb(88, 88, 88);
+  color: #c8c7c7;
+  font-weight:400 !important;
+}
+
+.move-right-20 {
+  position: relative;
+  left: 25px;
+}
+
+th {
+  max-width: 100px;
+  margin-bottom:15px;
+}
+
+span.ingredient-title-span {
+  position:relative;
+  bottom:5px;
+}

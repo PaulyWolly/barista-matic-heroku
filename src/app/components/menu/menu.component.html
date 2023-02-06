@@ -1,0 +1,44 @@
+<div class="menu-container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div>
+        <h3 class="menu-title">Menu</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="dn-title" scope="col">Drink Name</th>
+              <th class="ingredient-title" scope="col">Ingredients</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Coffee</th>
+              <td>3 units of coffee, 1 unit of sugar, 1 unit of cream <button class=" float-right btn btn-sm btn-primary" (click)="onCreateDrink('Coffee')">Select</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Decaf Coffee</th>
+              <td>3 units of Decaf Coffee, 1 unit of sugar, 1 unit of cream <button class=" float-right btn btn-sm btn-primary" (click)="onCreateDrink('Decaf Coffee')">Select</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Cafe Latte</th>
+              <td colspan="2">2 units of Espresso, 1 unit of steamed milk  <button class=" float-right btn btn-sm btn-primary" (click)="onCreateDrink('Cafe Latte')">Select</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Cafe Americano</th>
+              <td colspan="2">3 units of Espresso <button class=" float-right btn btn-sm btn-primary" (click)="onCreateDrink('Cafe Americano')">Select</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Cafe Mocha</th>
+              <td colspan="2">1 unit of Espresso, 1 unit of cocoa, 1 unit of steamed milk, 1 unit of whipped cream <button class=" float-right btn btn-sm btn-primary" (click)="onCreateDrink('Cafe Mocha')">Select</button></td>
+            </tr>
+            <tr>
+              <th scope="row">Cappuccino</th>
+              <td colspan="2">2 units of Espresso, 1 unit of steamed milk, 1 unit of foamed milk<button class=" float-right btn btn-sm btn-primary" (click)="onCreateDrink('Cappuccino')">Select</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

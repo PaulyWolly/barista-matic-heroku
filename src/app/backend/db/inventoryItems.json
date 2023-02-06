@@ -1,0 +1,49 @@
+{
+  "Inventory": [
+    {
+      "id": 1,
+      "name": "Coffee",
+      "unitsOnHand": 10
+    },
+      {
+      "id": 2,
+      "name": "Decaf Coffee",
+      "unitsOnHand": 10
+    },
+      {
+      "id": 3,
+      "name": "Sugar",
+      "unitsOnHand": 10
+    },
+      {
+      "id": 4,
+      "name": "Cream",
+      "unitsOnHand": 10
+    },
+      {
+      "id": 5,
+      "name": "Steamed Milk",
+      "unitsOnHand": 10
+    },
+      {
+      "id": 6,
+      "name": "Foamed Milk",
+      "unitsOnHand": 10
+    },
+      {
+      "id": 7,
+      "name": "Espresso",
+      "unitsOnHand": 10
+    },
+      {
+      "id": 8,
+      "name": "Cocoa",
+      "unitsOnHand": 10
+    },
+      {
+      "id": 9,
+      "name": "Whipped Cream",
+      "unitsOnHand": 10
+    }
+  ]
+}

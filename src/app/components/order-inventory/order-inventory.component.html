@@ -1,0 +1,16 @@
+<h3>Order Inventory</h3>
+<table class="table table-bordered">
+  <thead >
+    <tr >
+      <th class="uc-title" scope="col"><span class="uc-title-span">Units Ordering</span>&nbsp;&nbsp;
+      <button class=" fillUp-btn btn btn-sm btn-primary" (click)="addAllUnits()">Refill</button>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+</table>
+<div class="update-message" *ngIf="showMessage">
+  {{ updateMessage }}
+</div>

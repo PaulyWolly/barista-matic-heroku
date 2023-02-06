@@ -1,0 +1,16 @@
+table {
+  border: 1px solid #808080;
+}
+
+table thead .ingredients-title, .uc-title, .dn-title, .title {
+  background-color: rgb(88, 88, 88);
+  color: #c8c7c7;
+  font-weight:400 !important;
+}
+table thead .ingredients-title {
+  width: 50%
+}
+
+/* .bottom-50 {
+  padding-bottom: 50px;
+} */

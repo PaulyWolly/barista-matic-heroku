@@ -1,0 +1,26 @@
+table {
+  border: 1px solid #808080;
+}
+
+table thead .uc-title, .ingredient-title, .is-title {
+  background-color: rgb(88, 88, 88);
+  color: #c8c7c7;
+  font-weight:400 !important;
+}
+
+.fillUp-btn {
+  position: absolute;
+  top: 48px;
+  right: 20px;
+}
+.uc-title {
+  height: 45px;
+}
+.update-message {
+  display:flex;
+}
+
+span.uc-title-span {
+  position:relative;
+  bottom:5px;
+}

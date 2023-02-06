@@ -1,0 +1,62 @@
+{
+  "Drinks": [
+    {
+      "id": 1,
+      "name": "Coffee",
+      "ingredientUnits": {
+        "coffee": 3,
+        "sugar": 1,
+        "cream": 1
+      },
+      "price": "2.75"
+    },
+      {
+      "id": 2,
+      "name": "Decaf Coffee",
+      "ingredientUnits": {
+        "decaf coffee": 3,
+        "sugar": 1,
+        "cream": 1
+      },
+      "price": "2.75"
+    },
+      {
+      "id": 3,
+      "name": "Cafe Latte",
+      "ingredientUnits": {
+        "espresso": 2,
+        "steamed milk": 1
+      },
+      "price": "2.55"
+    },
+      {
+      "id": 4,
+      "name": "Cafe Americano",
+      "ingredientUnits": {
+        "espresso": 3
+      },
+      "price": "3.30"
+    },
+      {
+      "id": 5,
+      "name": "Cafe Mocha",
+      "ingredientUnits": {
+        "espresso": 1,
+        "cocoa": 1,
+        "steamed milk": 1,
+        "whipped cream": 1
+      },
+      "price": "3.35"
+    },
+      {
+      "id": 6,
+      "name": "Cappuccino",
+      "ingredientUnits": {
+        "espresso": 2,
+        "steamed milk": 1,
+        "foamed milk": 1
+      },
+      "price": "2.90"
+    }
+  ]
+}

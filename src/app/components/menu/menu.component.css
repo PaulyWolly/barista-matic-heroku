@@ -1,0 +1,31 @@
+table {
+  border: 1px solid #808080;
+  position: relative;
+  right: 100px;
+  width: 900px;
+
+}
+
+table thead .dn-title, .ingredient-title {
+  background-color: rgb(88, 88, 88);
+  color: #c8c7c7;
+  font-weight:400 !important;
+}
+
+table thead .dn-title {
+  width: 20%
+}
+
+.float-right {
+  float: right;
+  margin-right: 10px;
+}
+
+.menu-title {
+  position: relative;
+  right: 100px;
+}
+
+.menu-container {
+  height: 500px;
+}

@@ -1,0 +1,9 @@
+/* .content-container {
+  position: relative;
+  top: 100px;
+} */
+.content-container {
+  overflow: hidden;
+  height: 100%;
+  margin-left: 70px;
+}

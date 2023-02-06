@@ -1,0 +1,16 @@
+<h3>Inventory</h3>
+
+<table  class="table table-bordered">
+  <thead >
+    <tr >
+      <th class="ingredient-title" scope="col"><span class="ingredient-title-span">Ingredient</span></th>
+      <th class="is-title" scope="col">Units in stock<button class="btn btn-sm btn-primary move-right-20" (click)="refreshContent()">Refresh</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of inventoryItems">
+      <th scope="row">{{ item.name }}</th>
+      <td class="column-width">{{ item.unitsOnHand }}</td>
+    </tr>
+  </tbody>
+</table>
