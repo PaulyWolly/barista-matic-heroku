@@ -7,13 +7,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { IngredientsComponent } from './components/ingredients/ingredients.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { DispensedComponent } from './components/dispensed/dispensed.component';
-import { InventoryComponent } from './components/inventory/inventory.component';
+
 import { ContentComponent } from './components/content/content.component';
 import { DrinkComponent } from './components/drink/drink.component';
 import { InvContentComponent } from './components/inventory-content/inv-content.component';
 import { OrderInventoryComponent } from './components/order-inventory/order-inventory.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { InventoryComponent } from './components/inventory/inventory.component';
 
 @NgModule({
   declarations: [

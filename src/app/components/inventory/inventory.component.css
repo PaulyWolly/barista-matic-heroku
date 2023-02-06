@@ -1,12 +1,36 @@
-table {
-  border: 1px solid #808080;
-  width: 500px;
+div.inventory-container {
+  display: flex;
+  justify-content: center;
 }
 
-table thead .uc-title, .ingredient-title, .is-title {
+.child-container {
+  align-self: center;
+}
+
+table {
+  border: 1px solid #808080;
+  width: 600px;
+  height: 300px;
+}
+
+.ref-title {
+  width: 15%
+}
+
+table thead .uc-title, .ingredient-title, .is-title, .ref-title {
   background-color: rgb(88, 88, 88);
   color: #c8c7c7;
   font-weight:400 !important;
+}
+
+.float-right {
+  position: absolute;
+  right: 510px;
+  margin-top: -2px;
+}
+
+.float-right:hover {
+  cursor: pointer
 }
 
 .move-right-20 {
@@ -16,10 +40,13 @@ table thead .uc-title, .ingredient-title, .is-title {
 
 th {
   max-width: 100px;
-  margin-bottom:15px;
 }
 
-span.ingredient-title-span {
-  position:relative;
-  bottom:5px;
+td {
+  height: 20px;
+}
+
+span button.refill-btn.btn.btn-sm.btn-primary:hover {
+  cursor: pointer;
+  z-index: 2;
 }
