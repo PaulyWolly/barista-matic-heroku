@@ -1,16 +1,34 @@
-<h3>Inventory</h3>
+<div class="row">
 
-<table  class="table table-bordered">
-  <thead >
-    <tr >
-      <th class="ingredient-title" scope="col"><span class="ingredient-title-span">Ingredient</span></th>
-      <th class="is-title" scope="col">Units in stock<button class="btn btn-sm btn-primary move-right-20" (click)="refreshContent()">Refresh</button></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of inventoryItems">
-      <th scope="row">{{ item.name }}</th>
-      <td class="column-width">{{ item.unitsOnHand }}</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
+    <h3>Inventory</h3>
+
+    <table  class="table table-bordered">
+      <thead >
+        <tr >
+          <th class="ingredient-title" scope="col">Ingredient</th>
+          <th class="is-title" scope="col">Units in stock</th>
+          <th class="ref-title" scope="col">Refill</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of inventoryItems">
+          <th scope="row">{{ item.name }}</th>
+          <td
+            class="column-width">{{ item.unitsOnHand }}
+
+          </td>
+          <td>
+            <button class="btn btn-sm btn-primary"
+            (click)="onRefill(item.id)">Refill</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div> <!-- end child -->
+  <!-- <div class="col-md-4"></div> -->
+</div> <!-- end parent -->
+
+

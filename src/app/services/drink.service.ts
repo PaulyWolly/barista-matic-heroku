@@ -16,8 +16,6 @@ export class DrinkService {
   public localJsonServerUrl = 'http://localhost:8080/inventoryItems'
   public myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems'
 
-
-
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -29,7 +27,7 @@ export class DrinkService {
   getDrinks(): Observable<DrinkInterface[]> {
 
     let DrinkRecipes = this.http
-      .get<DrinkInterface[]>(this.myJsonServerUrl)
+      .get<DrinkInterface[]>(this.localJsonServerUrl)
       return DrinkRecipes;
     // .pipe(
     //   map((drinks: DrinkInterface[]) => {
@@ -51,7 +49,7 @@ export class DrinkService {
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems'
 
     let RecipeItems = this.http
-    .get<InventoryItemInterface[]>(myJsonServerUrl)
+    .get<InventoryItemInterface[]>(localJsonServerUrl)
     return RecipeItems;
   }
 
@@ -59,7 +57,7 @@ export class DrinkService {
     const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
-    return this.http.get<InventoryItemInterface>(myJsonServerUrl + id);
+    return this.http.get<InventoryItemInterface>(localJsonServerUrl + id);
   }
 
   getUnitsOnHandCount (id: number) {
@@ -69,7 +67,7 @@ export class DrinkService {
     const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
-    let idForItem = this.http.get<InventoryItemInterface>(myJsonServerUrl + id);
+    let idForItem = this.http.get<InventoryItemInterface>(localJsonServerUrl + id);
     console.log("itemReturned", idForItem)
   }
 
@@ -79,7 +77,7 @@ export class DrinkService {
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
     console.log('id in view is: ' + id);
-    this.http.get<any>(myJsonServerUrl + id)
+    this.http.get<any>(localJsonServerUrl + id)
     .subscribe((res: any) => {
       this.list = res;
       console.log('data with respect to id is: ' + res);
@@ -91,7 +89,7 @@ export class DrinkService {
     const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
-    this.http.put(myJsonServerUrl + `${payload.id}`,payload);
+    this.http.put(localJsonServerUrl + `${payload.id}`,payload);
   }
 
   patch(payload: InventoryItemInterface){
@@ -99,7 +97,7 @@ export class DrinkService {
     const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
-    this.http.patch(myJsonServerUrl + `${payload.id}`,payload);
+    this.http.patch(localJsonServerUrl + `${payload.id}`,payload);
   }
 
   editInventoryItems(id: number, body:InventoryItemInterface) {
@@ -108,7 +106,7 @@ export class DrinkService {
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
     let itemToEdit = this.http
-      .put(myJsonServerUrl + id,
+      .put(localJsonServerUrl + id,
         JSON.stringify(body.unitsOnHand),
         this.httpOptions)
       .subscribe((res) => {

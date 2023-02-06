@@ -42,4 +42,22 @@ export class InventoryComponent implements OnInit {
 
   }
 
+  onRefill(id: number) {
+
+    fetch('http://localhost:8080/inventoryItems/' + id, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        unitsOnHand: 10
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json))
+
+    this.refreshContent()
+
+  }
+
 }
