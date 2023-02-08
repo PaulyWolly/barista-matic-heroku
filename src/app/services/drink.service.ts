@@ -13,7 +13,7 @@ export class DrinkService {
   list: any;
   inventoryItems: InventoryItemInterface[] = [];
 
-  public localJsonServerUrl = 'http://localhost:8080/inventoryItems'
+  // public localJsonServerUrl = 'http://localhost:8080/inventoryItems'
   public myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems'
   public herokuUrl = 'https://barista-matic-json-server.herokuapp.com/inventoryItems'
 
@@ -46,7 +46,7 @@ export class DrinkService {
 
   getInventoryItems() {
 
-    const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
+    // const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems'
 
     let RecipeItems = this.http
@@ -55,7 +55,7 @@ export class DrinkService {
   }
 
   getById(id: number) {
-    const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
+    // const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
     return this.http.get<InventoryItemInterface>(this.herokuUrl + id);
@@ -65,7 +65,7 @@ export class DrinkService {
     // get id for inventoryItem
     // get count from UnitsOnHand
 
-    const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
+    // const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
     let idForItem = this.http.get<InventoryItemInterface>(this.herokuUrl + id);
@@ -74,7 +74,7 @@ export class DrinkService {
 
   getInventoryItemId (id: any) {
 
-    const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
+    // const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
     console.log('id in view is: ' + id);
