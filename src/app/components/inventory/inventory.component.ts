@@ -32,14 +32,9 @@ export class InventoryComponent implements OnInit {
     })
   }
 
-  editInventoryItems(id: number) {
-    // this.drinkService.
-  }
-
   refreshContent() {
     // refresh application component
     this.ngOnInit();
-
   }
 
   onRefill(id: number) {
@@ -57,7 +52,7 @@ export class InventoryComponent implements OnInit {
       .then((json) => console.log(json))
 
     this.refreshContent()
-
+    this.refreshContent()
   }
 
 }
