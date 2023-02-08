@@ -15,6 +15,7 @@ export class DrinkService {
 
   public localJsonServerUrl = 'http://localhost:8080/inventoryItems'
   public myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems'
+  public herokuUrl = 'https://barista-matic-json-server.herokuapp.com/inventoryItems'
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -27,7 +28,7 @@ export class DrinkService {
   getDrinks(): Observable<DrinkInterface[]> {
 
     let DrinkRecipes = this.http
-      .get<DrinkInterface[]>(this.localJsonServerUrl)
+      .get<DrinkInterface[]>(this.herokuUrl)
       return DrinkRecipes;
     // .pipe(
     //   map((drinks: DrinkInterface[]) => {
@@ -49,7 +50,7 @@ export class DrinkService {
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems'
 
     let RecipeItems = this.http
-    .get<InventoryItemInterface[]>(localJsonServerUrl)
+    .get<InventoryItemInterface[]>(this.herokuUrl)
     return RecipeItems;
   }
 
@@ -57,7 +58,7 @@ export class DrinkService {
     const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
-    return this.http.get<InventoryItemInterface>(localJsonServerUrl + id);
+    return this.http.get<InventoryItemInterface>(this.herokuUrl + id);
   }
 
   getUnitsOnHandCount (id: number) {
@@ -67,7 +68,7 @@ export class DrinkService {
     const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
-    let idForItem = this.http.get<InventoryItemInterface>(localJsonServerUrl + id);
+    let idForItem = this.http.get<InventoryItemInterface>(this.herokuUrl + id);
     console.log("itemReturned", idForItem)
   }
 
@@ -77,7 +78,7 @@ export class DrinkService {
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
     console.log('id in view is: ' + id);
-    this.http.get<any>(localJsonServerUrl + id)
+    this.http.get<any>(this.herokuUrl + id)
     .subscribe((res: any) => {
       this.list = res;
       console.log('data with respect to id is: ' + res);
@@ -89,7 +90,7 @@ export class DrinkService {
     const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
-    this.http.put(localJsonServerUrl + `${payload.id}`,payload);
+    this.http.put(this.herokuUrl + `${payload.id}`,payload);
   }
 
   patch(payload: InventoryItemInterface){
@@ -97,7 +98,7 @@ export class DrinkService {
     const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
-    this.http.patch(localJsonServerUrl + `${payload.id}`,payload);
+    this.http.patch(this.herokuUrl + `${payload.id}`,payload);
   }
 
   editInventoryItems(id: number, body:InventoryItemInterface) {
@@ -106,7 +107,7 @@ export class DrinkService {
     const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
 
     let itemToEdit = this.http
-      .put(localJsonServerUrl + id,
+      .put(this.herokuUrl + id,
         JSON.stringify(body.unitsOnHand),
         this.httpOptions)
       .subscribe((res) => {
