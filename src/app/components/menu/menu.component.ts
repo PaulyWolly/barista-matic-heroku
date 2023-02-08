@@ -49,10 +49,6 @@ export class MenuComponent implements OnInit {
     // open 'dispensed message' for user
     this.route.navigate(['/dispensed']);
 
-    const localJsonServerUrl = 'http://localhost:8080/inventoryItems'
-    const myJsonServerUrl = 'https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/'
-
-
     // handle edits to inventory units
     switch(drink) {
       case 'Coffee': {
@@ -69,10 +65,8 @@ export class MenuComponent implements OnInit {
 
         // update content
 
-
-
         // Get Item counts: Coffee
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/1')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/1')
           .subscribe((res) => {
             console.log('currentCoffeeItemCount: ', res.unitsOnHand)
 
@@ -81,13 +75,13 @@ export class MenuComponent implements OnInit {
 
             // Coffee ingredient update
             const drinkBody1 = { id: 1, name: 'Coffee', unitsOnHand: newCoffeeItemCount };
-            this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/1', drinkBody1)
+            this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/1', drinkBody1)
               .subscribe(data => this.postId = data.id);
 
           });
 
         // Get Item counts: Sugar
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/3')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/3')
           .subscribe((res) => {
             console.log('currentSugarItemCount: ', res.unitsOnHand)
 
@@ -96,13 +90,13 @@ export class MenuComponent implements OnInit {
 
             // Sugar ingredient update
             const drinkBody2 = { id: 3, name: 'Sugar', unitsOnHand: newSugarItemCount };
-            this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/3', drinkBody2)
+            this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/3', drinkBody2)
               .subscribe(data => this.postId = data.id);
 
           });
 
         // Get Item counts: Cream
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/4')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/4')
           .subscribe((res) => {
             console.log('currentCreamItemCount: ', res.unitsOnHand)
 
@@ -111,7 +105,7 @@ export class MenuComponent implements OnInit {
 
             // Cream ingredient update
             const drinkBody3 = { id: 4, name: 'Cream', unitsOnHand: newCreamItemCount };
-            this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/4', drinkBody3)
+            this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/4', drinkBody3)
               .subscribe(data => this.postId = data.id);
 
           });
@@ -129,7 +123,7 @@ export class MenuComponent implements OnInit {
         // Id for Cream: 4 (1)
 
         // Get Item counts: Decaf Coffee
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/2')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/2')
           .subscribe((res) => {
             console.log('currentDecafCoffeeItemCount: ', res.unitsOnHand)
 
@@ -138,13 +132,13 @@ export class MenuComponent implements OnInit {
 
             // Decaf Coffee ingredient update
             const drinkBody4 = { id: 2, name: 'Decaf Coffee', unitsOnHand: newDecafCoffeeItemCount };
-            this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/2', drinkBody4)
+            this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/2', drinkBody4)
               .subscribe(data => this.postId = data.id);
 
           });
 
         // Get Item counts: Sugar
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/3')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/3')
           .subscribe((res) => {
             console.log('currentSugarItemCount: ', res.unitsOnHand)
 
@@ -153,13 +147,13 @@ export class MenuComponent implements OnInit {
 
             // Sugar ingredient update
             const drinkBody5 = { id: 3, name: 'Sugar', unitsOnHand: newSugarItemCount };
-            this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/3', drinkBody5)
+            this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/3', drinkBody5)
               .subscribe(data => this.postId = data.id);
 
           });
 
         // Get Item counts: Cream
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/4')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/4')
           .subscribe((res) => {
             console.log('currentCreamItemCount: ', res.unitsOnHand)
 
@@ -168,7 +162,7 @@ export class MenuComponent implements OnInit {
 
             // Cream ingredient update
             const drinkBody6 = { id: 4, name: 'Cream', unitsOnHand: newCreamItemCount };
-            this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/4', drinkBody6)
+            this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/4', drinkBody6)
               .subscribe(data => this.postId = data.id);
 
           });
@@ -183,7 +177,7 @@ export class MenuComponent implements OnInit {
         // Id for Steamed Milk: 5 (1)
 
         // Get Item counts: Espresso
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/7')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/7')
         .subscribe((res) => {
           console.log('currentEspressoItemCount: ', res.unitsOnHand)
 
@@ -192,13 +186,13 @@ export class MenuComponent implements OnInit {
 
           // Espresso ingredient update
           const drinkBody7 = { id: 7, name: 'Espresso', unitsOnHand: newEspressoItemCount };
-          this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/7', drinkBody7)
+          this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/7', drinkBody7)
             .subscribe(data => this.postId = data.id);
 
         });
 
         // Get Item counts: Steamed Milk
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/5')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/5')
           .subscribe((res) => {
             console.log('currentSteamedMilkItemCount: ', res.unitsOnHand)
 
@@ -207,7 +201,7 @@ export class MenuComponent implements OnInit {
 
             // Steamed Milk ingredient update
             const drinkBody8 = { id: 5, name: 'Steamed Milk', unitsOnHand: newSteamedMilkItemCount };
-            this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/5', drinkBody8)
+            this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/5', drinkBody8)
               .subscribe(data => this.postId = data.id);
 
           });
@@ -222,7 +216,7 @@ export class MenuComponent implements OnInit {
         // Id for Espresso: 7 (3)
 
         // Get Item counts: Espresso
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/7')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/7')
         .subscribe((res) => {
           console.log('currentEspressoItemCount: ', res.unitsOnHand)
 
@@ -231,7 +225,7 @@ export class MenuComponent implements OnInit {
 
           // Espresso ingredient update
           const drinkBody9 = { id: 7, name: 'Espresso', unitsOnHand: newEspressoItemCount };
-          this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/7', drinkBody9)
+          this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/7', drinkBody9)
             .subscribe(data => this.postId = data.id);
 
         });
@@ -249,7 +243,7 @@ export class MenuComponent implements OnInit {
         // Id for Whipped Cream: 9 (1)
 
         // Get Item counts: Espresso
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/7')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/7')
         .subscribe((res) => {
           console.log('currentEspressoItemCount: ', res.unitsOnHand)
 
@@ -258,13 +252,13 @@ export class MenuComponent implements OnInit {
 
           // Espresso ingredient update
           const drinkBodyMocha = { id: 7, name: 'Espresso', unitsOnHand: newEspressoItemCount };
-          this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/7', drinkBodyMocha)
+          this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/7', drinkBodyMocha)
             .subscribe(data => this.postId = data.id);
 
         });
 
         // Get Item counts: Cocoa
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/8')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/8')
           .subscribe((res) => {
             console.log('currentCocoaItemCount: ', res.unitsOnHand)
 
@@ -273,13 +267,13 @@ export class MenuComponent implements OnInit {
 
             // Sugar ingredient update
             const drinkBody10 = { id: 8, name: 'Cocoa', unitsOnHand: newCocoaItemCount };
-            this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/8', drinkBody10)
+            this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/8', drinkBody10)
               .subscribe(data => this.postId = data.id);
 
           });
 
         // Get Item counts: Steamed Milk
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/5')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/5')
           .subscribe((res) => {
             console.log('currentSteamedMilkItemCount: ', res.unitsOnHand)
 
@@ -288,13 +282,13 @@ export class MenuComponent implements OnInit {
 
             // Steamed Milk ingredient update
             const drinkBody11 = { id: 5, name: 'Steamed Milk', unitsOnHand: newSteamedMilkItemCount };
-            this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/5', drinkBody11)
+            this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/5', drinkBody11)
               .subscribe(data => this.postId = data.id);
 
           });
 
         // Get Item counts: Whipped Cream
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/9')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/9')
           .subscribe((res) => {
             console.log('currentWhippedCreamItemCount: ', res.unitsOnHand)
 
@@ -303,7 +297,7 @@ export class MenuComponent implements OnInit {
 
             // Cream ingredient update
             const drinkBody12 = { id: 9, name: 'Whipped Cream', unitsOnHand: newWhippedCreamItemCount };
-            this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/9', drinkBody12)
+            this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/9', drinkBody12)
               .subscribe(data => this.postId = data.id);
 
           });
@@ -319,7 +313,7 @@ export class MenuComponent implements OnInit {
         // Id for Foamed Milk: 6 (1)
 
         // Get Item counts: Espresso
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/7')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/7')
         .subscribe((res) => {
           console.log('currentEspressoItemCount: ', res.unitsOnHand)
 
@@ -328,13 +322,13 @@ export class MenuComponent implements OnInit {
 
           // Espresso ingredient update
           const drinkBody13 = { id: 7, name: 'Espresso', unitsOnHand: newEspressoItemCount };
-          this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/7', drinkBody13)
+          this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/7', drinkBody13)
             .subscribe(data => this.postId = data.id);
 
         });
 
         // Get Item counts: Steamed Milk
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/5')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/5')
           .subscribe((res) => {
             console.log('currentSteamedMilkItemCount: ', res.unitsOnHand)
 
@@ -343,13 +337,13 @@ export class MenuComponent implements OnInit {
 
             // Steamed Milk ingredient update
             const drinkBody14 = { id: 5, name: 'Steamed Milk', unitsOnHand: newSteamedMilkItemCount };
-            this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/5', drinkBody14)
+            this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/5', drinkBody14)
               .subscribe(data => this.postId = data.id);
 
           });
 
         // Get Item counts: Foamed Milk
-        this.http.get<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/6')
+        this.http.get<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/6')
         .subscribe((res) => {
           console.log('currentFoamedMilkItemCount: ', res.unitsOnHand)
 
@@ -358,7 +352,7 @@ export class MenuComponent implements OnInit {
 
           // Foamed Milk ingredient update
           const drinkBody15 = { id: 6, name: 'Foamed Milk', unitsOnHand: newFoamedMilkItemCount };
-          this.http.put<InventoryItemInterface>('https://my-json-server.typicode.com/PaulyWolly/Barista-matic-main/inventoryItems/6', drinkBody15)
+          this.http.put<InventoryItemInterface>('https://barista-matic-json-server.herokuapp.com/inventoryItems/6', drinkBody15)
             .subscribe(data => this.postId = data.id);
 
         });

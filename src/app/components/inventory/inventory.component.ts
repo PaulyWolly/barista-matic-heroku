@@ -44,7 +44,7 @@ export class InventoryComponent implements OnInit {
 
   onRefill(id: number) {
 
-    fetch('https://barista-matic-json-server.herokuapp.com/inventoryItems' + id, {
+    fetch('https://barista-matic-json-server.herokuapp.com/inventoryItems/' + id, {
       method: 'PATCH',
       body: JSON.stringify({
         unitsOnHand: 10
